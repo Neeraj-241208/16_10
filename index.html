@@ -1,0 +1,699 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no,viewport-fit=cover">
+<meta name="theme-color" content="#fbd9c4">
+<meta name="description" content="A little birthday surprise for Vismaya. Open it!">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Happy Birthday, Vismaya ✨">
+<meta property="og:description" content="A little birthday surprise for Vismaya. Open it!">
+<meta property="og:image" content="assets/share-card.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="assets/share-card.jpg">
+<title>Happy Birthday, Vismaya ✨</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Cinzel+Decorative:wght@700&family=Fredoka:wght@400;500;600&family=Pacifico&family=Playball&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="grain"></div>
+
+<!-- INTRO -->
+<div id="intro" class="intro">
+  <div class="intro-lights"></div>
+  <div class="intro-envelope">
+    <div class="envelope-top"></div>
+    <div class="envelope-body">
+      <div class="seal">✦</div>
+      <p class="overline">A LITTLE SURPRISE</p>
+      <h1>For Vismaya</h1>
+      <p class="intro-text">Something cheerful, fun and birthday-sized is waiting inside.</p>
+      <div id="choices" class="choices">
+        <button id="openBtn" class="btn btn-main open-btn" type="button">Open surprise 🎁</button>
+        <button id="noBtn" class="btn btn-no" type="button">Don't open 🙅</button>
+      </div>
+      <p id="noMsg" class="no-msg" aria-live="polite" hidden></p>
+      <small>Turn your volume up a little 🔊</small>
+    </div>
+  </div>
+</div>
+
+<div id="confetti" class="confetti"></div>
+<div id="toast" class="toast"></div>
+
+<main id="app" class="app" aria-hidden="true">
+
+<!-- 1. TITLE -->
+<section id="hero" class="hero section">
+  <div class="hero-bg-orb orb1"></div>
+  <div class="hero-bg-orb orb2"></div>
+  <div class="fairy-lights" aria-hidden="true">
+    <i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i>
+  </div>
+
+  <div class="balloons" aria-hidden="true">
+    <span class="balloon" style="--c:#ff8fab;--c2:#e0557f;--w:54px;--dl:0s;left:4%;top:24%"></span>
+    <span class="balloon" style="--c:#ffd54f;--c2:#f0a500;--w:46px;--dl:-1.5s;right:5%;top:20%"></span>
+    <span class="balloon" style="--c:#8fd3f4;--c2:#3c9ccc;--w:50px;--dl:-2.2s;left:12%;top:64%"></span>
+    <span class="balloon" style="--c:#b39ddb;--c2:#7a5ea8;--w:58px;--dl:-.8s;right:12%;top:60%"></span>
+    <span class="balloon extra" style="--c:#a5d6a7;--c2:#4f9d57;--w:40px;--dl:-3s;left:22%;top:14%"></span>
+    <span class="balloon extra" style="--c:#ff8a65;--c2:#d9542e;--w:44px;--dl:-1s;right:22%;top:12%"></span>
+    <span class="balloon extra" style="--c:#fff176;--c2:#d4b200;--w:42px;--dl:-2.6s;left:7%;top:82%"></span>
+    <span class="balloon extra" style="--c:#f48fb1;--c2:#c2185b;--w:44px;--dl:-.4s;right:7%;top:84%"></span>
+  </div>
+
+  <div id="fxLayer" class="fx-layer" aria-hidden="true"></div>
+  <div id="wrapLayer" class="wrap-layer" aria-hidden="true"></div>
+
+  <div class="hero-content">
+    <div class="top-pill">✦ TODAY IS YOUR DAY <span class="hl">VISSU</span> ✦</div>
+    <div id="countdownReveal" class="countdown-reveal">3</div>
+    <h1 class="birthday-title">
+      <span class="bt-line bt-happy">HAPPY BIRTHDAY</span>
+      <span class="bt-line bt-name">Vismaya</span>
+    </h1>
+    <p class="hero-sub">by <u>neeru</u> 🎉</p>
+  </div>
+
+  <a class="scroll-cue" href="#paper"><span></span>scroll down</a>
+</section>
+
+<!-- 2. NEWSPAPER -->
+<section id="paper" class="paper-section section">
+  <div class="paper reveal">
+    <div class="paper-dateline"><span>Est. the day you arrived</span><span>Price: friendship</span></div>
+    <div class="paper-masthead" aria-label="The Vismaya Times"><span>The Vismaya Times</span></div>
+    <div class="paper-sub">✦ Eighteenth year edition ✦</div>
+    <div class="paper-rule"></div>
+    <div class="paper-body">
+      <figure class="paper-photo frame-minimal">
+        <div class="scratch-wrap">
+          <img id="stagePhoto" src="assets/vismaya-stage.jpg" alt="Vismaya on stage in a purple and yellow saree">
+          <canvas id="scratchCanvas" class="scratch-canvas" aria-label="Scratch to reveal the photo"></canvas>
+          <span class="stamp" aria-hidden="true">Birthday girl</span>
+        </div>
+        <figcaption>Today's birthday star 🎉</figcaption>
+      </figure>
+      <div class="paper-text">
+        <h2>BREAKING NEWS:<br><span>VISMAYA HAS A BIRTHDAY.</span></h2>
+        <div class="paper-cols">
+          <article><b>LOCAL SOURCES REPORT</b><p>Cake consumption is expected to increase dramatically today.</p></article>
+          <article><b>WEATHER</b><p>100% chance of sunshine, laughter and good vibes.</p></article>
+          <article><b>EXPERT OPINION</b><p>Dear Vismaya, many happy returns of the day! Celebrate your birthday to the fullest.</p></article>
+        </div>
+        <div class="paper-bottom">NO BORING NEWS ALLOWED TODAY ✦</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 3. HEY VIS, I ALMOST FORGOT -->
+<section class="forgot section">
+  <div class="forgot-card reveal">
+    <p class="forgot-kicker">A LAST LITTLE THING</p>
+    <h2 class="forgot-title">Hey Vis,<br><em>I almost forgot…</em></h2>
+    <button id="cakeOpen" class="cake-symbol" type="button" aria-label="Open the cake page">🎂</button>
+    <p class="forgot-hint">Tap the cake to open it</p>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-ribbon">HAPPY BIRTHDAY, VISMAYA ✦</div>
+  <p class="made-by">Made by <mark>Neeru</mark></p>
+</footer>
+</main>
+
+<!-- CAKE PAGE (full screen) -->
+<section id="cakePage" class="cake-page" hidden aria-label="Birthday cake">
+  <button id="cakeBack" class="back-btn" type="button">← Back</button>
+
+  <div class="cake-wrap">
+    <p id="cakeCount" class="cake-count" aria-live="polite">Make a wish 🎂</p>
+
+    <div id="cakeStage" class="cake-stage"></div>
+
+    <p id="cakeHint" class="cake-hint"></p>
+    <p id="cakeSlip" class="cake-slip" aria-live="polite"></p>
+
+    <div id="cakeOptions" class="cake-options">
+      <p class="cake-note">🕯️ Touch the candles to blow them</p>
+    </div>
+
+    <button id="cutAgain" class="btn btn-main cut-again" type="button" hidden>Eat again 🎂</button>
+    <p class="credit">credits: <mark>Conc H2So4</mark></p>
+  </div>
+</section>
+
+<script>
+(() => {
+  const $ = s => document.querySelector(s);
+  const $$ = s => [...document.querySelectorAll(s)];
+  const intro = $('#intro'), app = $('#app');
+
+  function toast(msg){
+    const t = $('#toast'); t.textContent = msg; t.classList.add('show');
+    clearTimeout(window._toast); window._toast = setTimeout(() => t.classList.remove('show'), 2400);
+  }
+
+  function confettiBurst(n = 60){
+    const box = $('#confetti'); box.innerHTML = '';
+    const chars = ['✦','✧','◆','★','•','●','◇','🎉','🎈'];
+    for (let i = 0; i < n; i++){
+      const x = document.createElement('span');
+      x.textContent = chars[Math.floor(Math.random() * chars.length)];
+      x.style.left = Math.random() * 100 + 'vw';
+      x.style.setProperty('--x', ((Math.random() - .5) * 300) + 'px');
+      x.style.setProperty('--r', ((Math.random() * 1000) - 500) + 'deg');
+      x.style.setProperty('--d', (1.5 + Math.random() * 3.4) + 's');
+      x.style.setProperty('--delay', (Math.random() * .5) + 's');
+      box.appendChild(x);
+    }
+    setTimeout(() => { if (box.childElementCount) box.innerHTML = ''; }, 5500);
+  }
+
+  /* ================= INTRO ================= */
+  const openBtn = $('#openBtn'), noBtn = $('#noBtn'), noMsg = $('#noMsg'), choices = $('#choices');
+  const NO_LINES = [
+    'plzz 🥹 open',
+    'pretty please 🥺 open',
+    "I'll be so sad 😢 open",
+    'okay I am crying now 😭 open pls',
+    'last chance 🥹👉 open'
+  ];
+  let noPresses = 0;
+
+  // Start the "Don't open" button just below the main button.
+  function placeNoStart(){
+    noBtn.style.left = Math.max(0, (choices.clientWidth - noBtn.offsetWidth) / 2) + 'px';
+    noBtn.style.top = '78px';
+  }
+  placeNoStart();
+  window.addEventListener('load', placeNoStart);
+
+  // Bounce "Don't open" to a random spot inside the choices box, avoiding the main button.
+  function jumpNo(){
+    const w = noBtn.offsetWidth, h = noBtn.offsetHeight;
+    const cw = choices.clientWidth, ch = choices.clientHeight;
+    const ob = openBtn.getBoundingClientRect(), cb = choices.getBoundingClientRect();
+    const ox = ob.left - cb.left, oy = ob.top - cb.top, ow = ob.width, oh = ob.height;
+    let x = 0, y = 0;
+    for (let t = 0; t < 30; t++){
+      x = Math.random() * Math.max(0, cw - w);
+      y = Math.random() * Math.max(0, ch - h);
+      const overlap = x < ox + ow + 10 && x + w > ox - 10 && y < oy + oh + 10 && y + h > oy - 10;
+      if (!overlap) break;
+    }
+    noBtn.style.left = x + 'px';
+    noBtn.style.top = y + 'px';
+  }
+
+  noBtn.addEventListener('click', () => {
+    noPresses++;
+    jumpNo();
+    // The main button grows a little each time "no" is pressed.
+    openBtn.style.setProperty('--grow', Math.min(1 + noPresses * 0.12, 1.8));
+    if (noPresses >= 1){
+      noMsg.hidden = false;
+      noMsg.textContent = NO_LINES[Math.min(noPresses - 1, NO_LINES.length - 1)];
+      noMsg.classList.remove('pop-in'); void noMsg.offsetWidth; noMsg.classList.add('pop-in');
+    }
+  });
+
+  $('#openBtn').addEventListener('click', async () => {
+    intro.classList.add('leaving');
+    app.setAttribute('aria-hidden', 'false');
+    document.body.classList.add('started');
+    let n = 3; const c = $('#countdownReveal'); c.textContent = n;
+    const timer = setInterval(() => {
+      n--;
+      if (n > 0){ c.textContent = n; c.animate([{transform:'scale(.7)',opacity:0},{transform:'scale(1)',opacity:1}],{duration:450}); }
+      else { clearInterval(timer); c.textContent = '✦'; c.classList.add('done'); confettiBurst(80); startFx(); }
+    }, 650);
+    setTimeout(() => intro.remove(), 900);
+  });
+
+
+  /* ================= VIEW LOCK (no pinch / double-tap zoom) ================= */
+  ['gesturestart','gesturechange','gestureend'].forEach(t => document.addEventListener(t, e => e.preventDefault(), { passive: false }));
+  document.addEventListener('touchmove', e => { if (e.touches.length > 1 || (e.scale && e.scale !== 1)) e.preventDefault(); }, { passive: false });
+
+  // Keep the "Don't open" button inside its box when the phone is rotated or resized.
+  window.addEventListener('resize', () => {
+    if (!noBtn.isConnected) return;
+    if (!noPresses){ placeNoStart(); return; }
+    const mx = Math.max(0, choices.clientWidth - noBtn.offsetWidth), my = Math.max(0, choices.clientHeight - noBtn.offsetHeight);
+    noBtn.style.left = Math.min(parseFloat(noBtn.style.left) || 0, mx) + 'px';
+    noBtn.style.top = Math.min(parseFloat(noBtn.style.top) || 0, my) + 'px';
+  });
+  window.addEventListener('orientationchange', () => setTimeout(() => window.dispatchEvent(new Event('resize')), 250));
+
+  /* ================= HERO EFFECTS ================= */
+
+  // Pop-ups (party emojis), crackers (firework bursts) and falling wrappers.
+  // All of them run for 10 seconds after the countdown, then the scene goes still.
+  const FX = $('#fxLayer'), WRAP = $('#wrapLayer');
+  const POP_EMOJI = ['🎈','🎂','🎁','🎉','🥳','🎊','🍰','🧁','⭐','✨','🎶','🌟'];
+
+  function pop(){
+    const zone = Math.random();
+    let x, y;
+    if (zone < .5){ x = Math.random() < .5 ? 2 + Math.random() * 12 : 86 + Math.random() * 10; y = 14 + Math.random() * 62; }
+    else if (zone < .75){ x = 18 + Math.random() * 64; y = 4 + Math.random() * 8; }
+    else { x = 18 + Math.random() * 64; y = 80 + Math.random() * 6; }
+    const el = document.createElement('span');
+    el.className = 'pop';
+    el.style.left = x + '%';
+    el.style.top = y + '%';
+    const e = POP_EMOJI[Math.floor(Math.random() * POP_EMOJI.length)];
+    el.innerHTML = '<span class="bob">' + e + '</span>';
+    FX.appendChild(el);
+  }
+
+  // Crackers: firework bursts.
+  const BURST_COLORS = ['#ffd54f','#ff8a65','#f48fb1','#8fd3f4','#b39ddb','#fff176','#ffffff'];
+  function firework(){
+    const x = 12 + Math.random() * 76, y = 14 + Math.random() * 40;
+    const base = BURST_COLORS[Math.floor(Math.random() * BURST_COLORS.length)];
+    const wrap = document.createElement('div');
+    wrap.className = 'burst';
+    wrap.style.left = x + '%';
+    wrap.style.top = y + '%';
+    const count = 16;
+    for (let i = 0; i < count; i++){
+      const s = document.createElement('i');
+      const a = (i / count) * Math.PI * 2 + Math.random() * .2;
+      const d = 46 + Math.random() * 34;
+      s.style.setProperty('--dx', (Math.cos(a) * d).toFixed(1) + 'px');
+      s.style.setProperty('--dy', (Math.sin(a) * d).toFixed(1) + 'px');
+      s.style.background = i % 3 === 0 ? '#ffffff' : base;
+      wrap.appendChild(s);
+    }
+    FX.appendChild(wrap);
+    setTimeout(() => wrap.remove(), 1300);
+  }
+
+  // Wrappers: coloured paper pieces falling from the top of the screen.
+  const WRAP_COLORS = ['#f48fb1','#ffd54f','#8fd3f4','#b39ddb','#a5d6a7','#ffab91','#ffffff'];
+  function wrapper(){
+    const el = document.createElement('span');
+    el.className = 'wrap-piece';
+    const w = 6 + Math.random() * 8, hgt = w * (1.4 + Math.random() * 1.6);
+    el.style.setProperty('--w', w.toFixed(1) + 'px');
+    el.style.setProperty('--h', hgt.toFixed(1) + 'px');
+    el.style.setProperty('--c', WRAP_COLORS[Math.floor(Math.random() * WRAP_COLORS.length)]);
+    el.style.left = (Math.random() * 100) + '%';
+    el.style.setProperty('--x', ((Math.random() - .5) * 160).toFixed(0) + 'px');
+    el.style.setProperty('--r', ((Math.random() * 2 - 1) * 720).toFixed(0) + 'deg');
+    el.style.setProperty('--d', (3.2 + Math.random() * 2.4).toFixed(2) + 's');
+    WRAP.appendChild(el);
+    setTimeout(() => el.remove(), 6000);
+  }
+
+  function startFx(){
+    const hero = $('#hero');
+    hero.classList.add('live');
+    const popT = setInterval(pop, 600);
+    const burstT = setInterval(firework, 950);
+    const wrapT = setInterval(() => { wrapper(); wrapper(); }, 150);
+    pop(); firework(); wrapper();
+    setTimeout(() => {
+      clearInterval(popT); clearInterval(burstT); clearInterval(wrapT);
+      hero.classList.add('still');
+      $('.scroll-cue').classList.add('show');
+    }, 10000);
+  }
+
+  /* ================= SCRATCH REVEAL (newspaper photo) ================= */
+  const scratch = $('#scratchCanvas');
+  if (scratch){
+    const sctx = scratch.getContext('2d', { willReadFrequently: true });
+    const box = scratch.parentElement;
+    let dpr = 1, painted = false, touched = false, done = false, scratching = false, lastX = 0, lastY = 0;
+
+    function sizeCanvas(){
+      if (touched) return;
+      const r = box.getBoundingClientRect();
+      if (!r.width) return;
+      dpr = Math.min(window.devicePixelRatio || 1, 2);
+      scratch.width = Math.round(r.width * dpr);
+      scratch.height = Math.round(r.height * dpr);
+      paintCover();
+    }
+    function paintCover(){
+      const W = scratch.width, H = scratch.height;
+      sctx.globalCompositeOperation = 'source-over';
+      const g = sctx.createLinearGradient(0, 0, W, H);
+      g.addColorStop(0, '#b9bec6'); g.addColorStop(.5, '#e9ecf0'); g.addColorStop(1, '#9ea4ad');
+      sctx.fillStyle = g; sctx.fillRect(0, 0, W, H);
+      sctx.fillStyle = 'rgba(255,255,255,.35)';
+      const step = 10 * dpr;
+      for (let y = 0, row = 0; y < H; y += step, row++){
+        for (let x = (row % 2) * step / 2; x < W; x += step){
+          sctx.beginPath(); sctx.arc(x, y, 1.2 * dpr, 0, Math.PI * 2); sctx.fill();
+        }
+      }
+      sctx.fillStyle = '#4a4f57';
+      sctx.textAlign = 'center'; sctx.textBaseline = 'middle';
+      sctx.font = `700 ${Math.round(18 * dpr)}px Fredoka, sans-serif`;
+      sctx.fillText('SCRATCH TO REVEAL', W / 2, H / 2 - 14 * dpr);
+      sctx.font = `500 ${Math.round(14 * dpr)}px Fredoka, sans-serif`;
+      sctx.fillText('the birthday star ✦', W / 2, H / 2 + 16 * dpr);
+      painted = true;
+    }
+    function pos(e){
+      const r = scratch.getBoundingClientRect();
+      return [(e.clientX - r.left) * (scratch.width / r.width), (e.clientY - r.top) * (scratch.height / r.height)];
+    }
+    function scrubTo(x, y){
+      sctx.globalCompositeOperation = 'destination-out';
+      sctx.lineWidth = 34 * dpr; sctx.lineCap = 'round'; sctx.lineJoin = 'round';
+      sctx.beginPath(); sctx.moveTo(lastX, lastY); sctx.lineTo(x, y); sctx.stroke();
+      lastX = x; lastY = y;
+    }
+    function clearedShare(){
+      const d = sctx.getImageData(0, 0, scratch.width, scratch.height).data;
+      let clear = 0, total = 0;
+      for (let i = 3; i < d.length; i += 16){ total++; if (d[i] < 128) clear++; }
+      return total ? clear / total : 0;
+    }
+
+    scratch.addEventListener('pointerdown', e => {
+      if (done) return;
+      if (!painted) sizeCanvas();
+      touched = true;
+      scratching = true;
+      scratch.setPointerCapture(e.pointerId);
+      [lastX, lastY] = pos(e);
+      scrubTo(lastX, lastY);
+    });
+    scratch.addEventListener('pointermove', e => {
+      if (!scratching || done) return;
+      const [x, y] = pos(e);
+      scrubTo(x, y);
+    });
+    const endScratch = () => {
+      if (!scratching) return;
+      scratching = false;
+      if (!done && clearedShare() > .4){
+        done = true;
+        sctx.clearRect(0, 0, scratch.width, scratch.height);
+        box.classList.add('revealed');
+        toast('🎉 You found the birthday star!');
+        setTimeout(() => { $('.paper').classList.add('thud'); snd('pop'); buzz(20); }, 650);
+      }
+    };
+    scratch.addEventListener('pointerup', endScratch);
+    scratch.addEventListener('pointercancel', endScratch);
+    $('#stagePhoto').addEventListener('load', sizeCanvas);
+    window.addEventListener('load', sizeCanvas);
+    window.addEventListener('resize', sizeCanvas);
+  }
+
+  /* ================= EXTRAS ================= */
+  const buzz = ms => { try { navigator.vibrate && navigator.vibrate(ms); } catch (e) {} };
+
+  // Small sound effects (whoosh, bite, pop and the candle blow).
+  let AC = null;
+  function snd(kind){
+    try {
+      AC = AC || new (window.AudioContext || window.webkitAudioContext)();
+      if (AC.state === 'suspended') AC.resume();
+      const t = AC.currentTime, len = kind === 'whoosh' ? .7 : kind === 'blow' ? .55 : .12;
+      const b = AC.createBuffer(1, Math.ceil(AC.sampleRate * len), AC.sampleRate), d = b.getChannelData(0);
+      for (let i = 0; i < d.length; i++) d[i] = (Math.random() * 2 - 1) * Math.pow(1 - i / d.length, kind === 'whoosh' ? 1 : kind === 'blow' ? 1.6 : 3);
+      const s = AC.createBufferSource(), f = AC.createBiquadFilter(), g = AC.createGain();
+      s.buffer = b; f.type = 'bandpass';
+      if (kind === 'whoosh'){ f.frequency.setValueAtTime(600, t); f.frequency.exponentialRampToValueAtTime(2400, t + .6); g.gain.value = .25; }
+      else if (kind === 'blow'){ f.type = 'lowpass'; f.frequency.setValueAtTime(1800, t); f.frequency.exponentialRampToValueAtTime(350, t + .5); g.gain.setValueAtTime(.0001, t); g.gain.exponentialRampToValueAtTime(.9, t + .06); g.gain.exponentialRampToValueAtTime(.0001, t + .55); }
+      else if (kind === 'pop'){ f.frequency.value = 900; g.gain.value = .8; }
+      else { f.frequency.value = 2600; g.gain.value = .5; }
+      s.connect(f); f.connect(g); g.connect(AC.destination); s.start(t);
+    } catch (e) {}
+  }
+
+  // Tap the balloons to pop them; they float back a few seconds later.
+  function burstAt(px, py, color){
+    const w = document.createElement('div'); w.className = 'burst'; w.style.left = px + 'px'; w.style.top = py + 'px';
+    for (let i = 0; i < 14; i++){
+      const s = document.createElement('i'), a = i / 14 * Math.PI * 2 + Math.random() * .3, d = 30 + Math.random() * 38;
+      s.style.setProperty('--dx', (Math.cos(a) * d).toFixed(1) + 'px'); s.style.setProperty('--dy', (Math.sin(a) * d).toFixed(1) + 'px');
+      s.style.background = i % 3 ? color : '#fff'; w.appendChild(s);
+    }
+    FX.appendChild(w); setTimeout(() => w.remove(), 1200);
+  }
+  $$('.balloon').forEach(b => b.addEventListener('pointerdown', () => {
+    if (b.classList.contains('popped')) return;
+    const r = b.getBoundingClientRect(), hr = $('#hero').getBoundingClientRect();
+    burstAt(r.left + r.width / 2 - hr.left, r.top + r.height * .4 - hr.top, getComputedStyle(b).getPropertyValue('--c').trim());
+    b.classList.remove('back'); b.classList.add('popped'); snd('pop'); buzz(15);
+    setTimeout(() => { b.classList.remove('popped'); b.classList.add('back'); }, 4500);
+  }));
+
+  // One slip of paper per slice. Replace these with your own lines or inside jokes.
+  const SLICE_NOTES = [
+    'First bite is yours. No sharing rule.',
+    'Second slice. Nobody is counting.',
+    'Third one. Okay, now we are counting.',
+    'Last slice. Happy birthday, Vissu.'
+  ];
+  function slip(i){
+    const el = $('#cakeSlip'); el.textContent = SLICE_NOTES[i] || '';
+    el.classList.remove('show'); void el.offsetWidth; el.classList.add('show');
+  }
+
+  // Tab title when she switches away.
+  const TITLE = document.title;
+  document.addEventListener('visibilitychange', () => { document.title = document.hidden ? 'Come back, the cake is waiting 🎂' : TITLE; });
+
+  /* ================= SCROLL REVEALS ================= */
+  const obs = new IntersectionObserver(entries => {
+    entries.forEach(e => { if (e.isIntersecting){ e.target.classList.add('in'); obs.unobserve(e.target); } });
+  }, { threshold: .15 });
+  $$('.reveal').forEach(el => obs.observe(el));
+
+  /* ================= CAKE PAGE ================= */
+  const CX = 160, CY = 120, RX = 116, RY = 58, DEPTH = 22;
+  const TOP = '#fff4ea', SIDE = '#d98a64', FROST = '#fffaf5', STROKE = '#efc2a4';
+  const SLICE_START = [-90, 0, 90, 180];
+  const CANDLE_COLORS = ['#f48fb1', '#8fd3f4', '#ffd54f', '#b39ddb'];
+  const SPRINKLE_COLORS = ['#e26b8f', '#7fc8e8', '#ffd54f', '#b39ddb', '#a5d6a7'];
+  const rad = d => d * Math.PI / 180;
+  const f2 = n => n.toFixed(1);
+  const pt = (a, f = 1) => [CX + RX * f * Math.cos(rad(a)), CY + RY * f * Math.sin(rad(a))];
+
+  function sector(s, dy = 0){
+    const [x0, y0] = pt(s), [x1, y1] = pt(s + 90);
+    return `M${CX} ${CY + dy}L${x0.toFixed(2)} ${(y0 + dy).toFixed(2)}A${RX} ${RY} 0 0 1 ${x1.toFixed(2)} ${(y1 + dy).toFixed(2)}Z`;
+  }
+
+  function drips(from, to){
+    let out = '';
+    for (let a = from + 10; a < to; a += 20){
+      if (Math.sin(rad(a)) <= 0.05) continue;
+      const [x, y] = pt(a);
+      const len = 8 + ((Math.round(a) % 7 + 7) % 7) * 1.6;
+      out += `<path d="M${f2(x - 6)} ${f2(y)} Q${f2(x)} ${f2(y + 4)} ${f2(x + 6)} ${f2(y)} L${f2(x + 6)} ${f2(y + len)} Q${f2(x)} ${f2(y + len + 6)} ${f2(x - 6)} ${f2(y + len)} Z" fill="${FROST}"/>`;
+    }
+    return out;
+  }
+
+  function sprinkles(from, to){
+    let out = '';
+    for (let i = 0; i < 3; i++){
+      const a = from + 25 + i * 22;
+      if (a >= to) break;
+      const [x, y] = pt(a, .6);
+      out += `<rect x="${f2(x - 1.6)}" y="${f2(y - 3.4)}" width="3.2" height="6.8" rx="1.6" fill="${SPRINKLE_COLORS[(i + Math.abs(from)) % 5]}" transform="rotate(${a * 3 % 180} ${f2(x)} ${f2(y)})"/>`;
+    }
+    return out;
+  }
+
+  function candle(i){
+    const [x, y] = pt(SLICE_START[i] + 30, .5);
+    const c = CANDLE_COLORS[i];
+    return `<g class="candle">
+      <rect class="hit" x="${f2(x - 16)}" y="${f2(y - 76)}" width="32" height="80" fill="#fff" fill-opacity="0"/>
+      <rect x="${f2(x - 4.5)}" y="${f2(y - 40)}" width="9" height="40" rx="3" fill="${c}"/>
+      <rect x="${f2(x - 4.5)}" y="${f2(y - 28)}" width="9" height="4" fill="#ffffff" opacity=".55"/>
+      <rect x="${f2(x - 4.5)}" y="${f2(y - 20)}" width="9" height="4" fill="#ffffff" opacity=".55"/>
+      <rect x="${f2(x - .6)}" y="${f2(y - 44)}" width="1.2" height="5" fill="#5b4636"/>
+      <g class="flame">
+        <path d="M${f2(x)} ${f2(y - 66)} C${f2(x + 8)} ${f2(y - 56)} ${f2(x + 7)} ${f2(y - 45)} ${f2(x)} ${f2(y - 42)} C${f2(x - 7)} ${f2(y - 45)} ${f2(x - 8)} ${f2(y - 56)} ${f2(x)} ${f2(y - 66)}Z" fill="#ffb300"/>
+        <path d="M${f2(x)} ${f2(y - 58)} C${f2(x + 3)} ${f2(y - 52)} ${f2(x + 3)} ${f2(y - 46)} ${f2(x)} ${f2(y - 44)} C${f2(x - 3)} ${f2(y - 46)} ${f2(x - 3)} ${f2(y - 52)} ${f2(x)} ${f2(y - 58)}Z" fill="#fff3c4"/>
+      </g>
+      <path class="smoke" d="M${f2(x)} ${f2(y - 46)}c-5-8 5-14 0-24s5-14 0-22" fill="none" stroke="#b8a89b" stroke-width="2" stroke-linecap="round"/>
+    </g>`;
+  }
+
+  function pieceSVG(i){
+    const s = SLICE_START[i], mid = s + 45;
+    const mx = Math.cos(rad(mid)) * 18, my = Math.sin(rad(mid)) * 13;
+    return `<g class="slice" data-i="${i}" style="--mx:${f2(mx)}px;--my:${f2(my)}px">
+      <path d="${sector(s, DEPTH)}" fill="${SIDE}"/>
+      <path d="${sector(s)}" fill="${TOP}" stroke="${STROKE}" stroke-width="1.5"/>
+      ${drips(s, s + 90)}
+      ${sprinkles(s, s + 90)}
+      ${candle(i)}
+    </g>`;
+  }
+
+  const drawOrder = [0, 1, 2, 3].sort((a, b) =>
+    Math.sin(rad(SLICE_START[a] + 45)) - Math.sin(rad(SLICE_START[b] + 45)));
+
+  function cakeSVG(){
+    const cuts = SLICE_START.map(s => {
+      const [x, y] = pt(s);
+      return `<line class="cutline" x1="${CX}" y1="${CY}" x2="${f2(x)}" y2="${f2(y)}"/>`;
+    }).join('');
+    const whole = `<g class="whole">
+      <ellipse cx="${CX}" cy="${CY + DEPTH}" rx="${RX}" ry="${RY}" fill="${SIDE}"/>
+      <ellipse cx="${CX}" cy="${CY}" rx="${RX}" ry="${RY}" fill="${TOP}" stroke="${STROKE}" stroke-width="1.5"/>
+      ${drips(0, 180)}
+      ${[0, 1, 2, 3].map(i => {
+        const [x, y] = pt(SLICE_START[i] + 45, .6);
+        return `<rect x="${f2(x - 1.6)}" y="${f2(y - 3.4)}" width="3.2" height="6.8" rx="1.6" fill="${SPRINKLE_COLORS[i]}" transform="rotate(${i * 40} ${f2(x)} ${f2(y)})"/>`;
+      }).join('')}
+      ${[0, 1, 2, 3].map(candle).join('')}
+    </g>`;
+    return `<svg viewBox="0 0 320 262" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Birthday cake with four candles">
+      <ellipse cx="${CX}" cy="${CY + DEPTH + 10}" rx="${RX + 30}" ry="${RY + 16}" fill="#f0d9c4"/>
+      ${whole}
+      <g class="pieces">${drawOrder.map(pieceSVG).join('')}</g>
+      <g class="cuts">${cuts}</g>
+    </svg>`;
+  }
+
+  const stage = $('#cakeStage');
+  let cakeState = 'lit';
+  let piecesLeft = 4;
+  let run = 0;
+  const timers = [];
+  const later = (ms, fn) => {
+    const id = run;
+    timers.push(setTimeout(() => { if (id === run) fn(); }, ms));
+  };
+
+  function setCount(t){ $('#cakeCount').textContent = t; }
+  function setHint(t){ $('#cakeHint').textContent = t; }
+
+  function resetCake(){
+    run++;
+    timers.splice(0).forEach(clearTimeout);
+    cakeState = 'lit'; piecesLeft = 4; litLeft = 4;
+    stage.innerHTML = cakeSVG();
+    stage.classList.remove('cut'); stage.style.setProperty('--blow', '0'); $('#cakeSlip').textContent = '';
+    $('#cakeOptions').hidden = false;
+    $('#cutAgain').hidden = true;
+    setCount('Make a wish 🎂');
+    setHint('4 candles are lit');
+  }
+
+  let litLeft = 4;
+
+  // Touch (finger) or click (mouse) a candle: it leans, goes out, a wisp of smoke rises, and you hear a soft blow.
+  function blowCandle(candleEl){
+    if (cakeState !== 'lit' || candleEl.dataset.out) return;
+    candleEl.dataset.out = '1';
+    const flame = candleEl.querySelector('.flame');
+    candleEl.classList.add('puff');
+    flame.style.setProperty('--blow', '.9');
+    snd('blow'); buzz(18);
+    setTimeout(() => flame.classList.add('out'), 160);
+    litLeft--;
+    if (litLeft > 0){
+      setHint(`${litLeft} candle${litLeft === 1 ? '' : 's'} left`);
+    } else {
+      cakeState = 'counting';
+      $('#cakeOptions').hidden = true;
+      setHint('');
+      startCountdown();
+    }
+  }
+
+  function startCountdown(){
+    const t0 = 700;
+    later(t0, () => setCount('Wait…'));
+    later(t0 + 900, () => setCount('3'));
+    later(t0 + 1800, () => setCount('2'));
+    later(t0 + 2700, () => setCount('1'));
+    later(t0 + 3600, () => { setCount('Cake cut! 🎉'); cutCake(); });
+    later(t0 + 4700, () => {
+      cakeState = 'ready';
+      setCount('Tap to eat cake 🍰');
+      setHint('Tap any piece to take a bite. 4 pieces to go!');
+    });
+  }
+
+  stage.addEventListener('pointerdown', e => {
+    const c = e.target.closest('.whole .candle');
+    if (!c) return;
+    e.preventDefault();
+    blowCandle(c);
+  });
+
+  function cutCake(){
+    stage.classList.add('cut');
+    stage.querySelectorAll('.slice').forEach(g => g.classList.add('split'));
+  }
+
+  stage.addEventListener('click', e => {
+    const g = e.target.closest('.slice');
+    if (!g || cakeState !== 'ready' || g.classList.contains('gone')) return;
+    g.classList.add('gone');
+    snd('bite'); buzz(12); slip(4 - piecesLeft);
+    piecesLeft--;
+    if (piecesLeft === 0){
+      cakeState = 'done';
+      setCount('All eaten! 😋🎂');
+      setHint('Yum! Tap “Eat again” for another round.');
+      $('#cutAgain').hidden = false;
+      toast('🎉 Cake finished!'); confettiBurst(70); snd('pop');
+    } else {
+      setHint(`${piecesLeft} piece${piecesLeft === 1 ? '' : 's'} left. Keep going!`);
+    }
+  });
+
+  $('#cutAgain').addEventListener('click', () => { resetCake(); toast('🎂 New cake, make a wish!'); });
+
+
+  $('#cakeOpen').addEventListener('click', () => {
+    $('#cakePage').hidden = false;
+    document.body.style.overflow = 'hidden';
+    resetCake();
+  });
+  $('#cakeBack').addEventListener('click', () => {
+    run++; timers.splice(0).forEach(clearTimeout);
+    $('#cakePage').hidden = true;
+    document.body.style.overflow = '';
+  });
+})();
+</script>
+
+<audio id="birthdayBackgroundMusic" src="./assets/birthday-background.mp3" loop preload="auto"></audio>
+<script>
+(() => {
+  const music = document.getElementById('birthdayBackgroundMusic');
+  const openButton = document.getElementById('openBtn');
+  if (!music || !openButton) return;
+
+  // Start music directly from the user's Open surprise click so browsers
+  // allow playback on GitHub Pages. Keep it looping in the background.
+  openButton.addEventListener('click', () => {
+    if (music.paused) {
+      music.play().catch(() => {
+        // If the browser still blocks playback, the next user interaction can retry.
+        const retry = () => music.play().catch(() => {});
+        document.addEventListener('pointerdown', retry, { once: true });
+        document.addEventListener('keydown', retry, { once: true });
+      });
+    }
+  });
+})();
+</script>
+
+</body>
+</html>
